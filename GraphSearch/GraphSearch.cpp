@@ -22,9 +22,9 @@ int main()
     graph.addEdge(5, 6, 1);
     graph.addEdge(6, 0, 1);
     graph.addEdge(6, 2, 1);
-    graph.addEdge(6, 2, 1);
+    graph.addEdge(6, 5, 1);
     graph.displayMatrix();
-    
+
     GraphSearcher graphSearcher = GraphSearcher(&graph);
     graphSearcher.searchAll();
 
