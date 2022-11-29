@@ -4,10 +4,10 @@
 
 int main()
 {
-    int vertexAmount = 7;
+    int vertexAmount = 4;
     //printf("How many vertexes graph will have?\n"); scanf_s("%i", &size);
     
-    Graph graph = Graph(vertexAmount);
+    /*Graph graph = Graph(vertexAmount);
     graph.addEdge(0, 1, 1);
     graph.addEdge(0, 6, 1);
     graph.addEdge(1, 2, 1);
@@ -23,10 +23,23 @@ int main()
     graph.addEdge(6, 0, 1);
     graph.addEdge(6, 2, 1);
     graph.addEdge(6, 5, 1);
+    graph.displayMatrix();*/
+
+    Graph graph = Graph(vertexAmount);
+    graph.addEdge(0, 1, 1);
+    graph.addEdge(0, 3, 1);
+    graph.addEdge(1, 2, 1);
+    graph.addEdge(2, 1, 1);
+    graph.addEdge(2, 3, 1);
+    graph.addEdge(3, 0, 1);
+    graph.addEdge(3, 1, 1);
+    graph.addEdge(3, 2, 1);
     graph.displayMatrix();
 
     GraphSearcher graphSearcher = GraphSearcher(&graph);
     graphSearcher.searchAll();
+
+    printf("Path: %s", graphSearcher.paths.top().c_str());
 
     delete graph.adjMatrix;
 }
